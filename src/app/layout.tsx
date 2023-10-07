@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className="relative w-screen h-full">
+      <body className="relative w-screen h-screen">
         <ContextProvider>{children}</ContextProvider>
       </body>
     </html>

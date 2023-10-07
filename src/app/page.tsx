@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import Link from "next/link";
 import * as Yup from "yup";
 import Input from "@/components/UI/Input";
+import Image from "next/image";
 
 export default function Home() {
   const { lang, langContent } = useContextProvider();
@@ -26,15 +27,29 @@ export default function Home() {
   });
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full flex flex-row justify-center items-center">
       <LangChooser />
-      <div className="flex flex-col items-center w-full">
-        <h1 className="text-[#2393B0] font-['Poppins'] text-6xl mt-28 font-medium">
+      <div className="relative md:flex hidden w-full h-full bg-[#06355F] rounded-e-full justify-center items-center basis-7/12">
+        <Image
+          className="bg-transparent"
+          src={`/images/rahad-building.svg`}
+          alt={`rahad building image`}
+          width={700}
+          height={700}
+          sizes="100vw"
+          style={{
+            width: "700px",
+            height: "auto",
+          }}
+        />
+      </div>
+      <div className="flex flex-col items-center w-full md:basis-5/12 self-start mt-28">
+        <h1 className="text-[#2393B0] font-['Poppins'] text-6xl font-medium">
           RAHAD
         </h1>
         <p className="font-medium mt-14 text-[#294046]">{langContent.title}</p>
         <form
-          className="flex flex-col mt-6 w-full px-4"
+          className="flex flex-col mt-6 w-full px-4 md:px-12 justify-center items-center"
           onSubmit={formik.handleSubmit}
         >
           <div className="flex flex-col justify-center items-center space-y-4 w-full">
@@ -67,7 +82,7 @@ export default function Home() {
             {langContent.forgettingPass}
           </Link>
           <button
-            className="from-[#087592] to-[#2393B0] text-white bg-gradient-to-r font-medium rounded-[10px] py-4 mt-12"
+            className="from-[#087592] to-[#2393B0] text-white bg-gradient-to-r font-medium rounded-[10px] py-4 mt-20 md:mt-12 md:w-1/2 w-full"
             type="submit"
           >
             {langContent.enterButton}
