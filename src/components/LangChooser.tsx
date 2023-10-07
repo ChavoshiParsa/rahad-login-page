@@ -2,7 +2,7 @@
 
 import { useContextProvider } from "@/context/store";
 import { useState } from "react";
-import Icon from "./Icon";
+import Icon from "./UI/Icon";
 import { lang } from "@/types/context-types";
 
 const LangChooser = () => {
